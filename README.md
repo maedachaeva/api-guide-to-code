@@ -13,7 +13,8 @@ API 가이드 작성부터 구현까지의 과정을 기록한 레포지토리�
 <br>
 
 ## Notes
-| 진행 과정에서 학습한 개념 정리
+> 진행 과정에서 학습한 개념 정리 모음
+
 | Title | Description |
 |--------|------------------|
 | [REST API 개념 및 설계 원칙](docs/notes/rest-api.md) | REST/RESTful의 정의와 주요 장점, 설계 원칙 정리 |
