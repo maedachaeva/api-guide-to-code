@@ -1,6 +1,7 @@
 # api-guide-to-code
+API 가이드 작성부터 구현까지의 과정을 기록한 레포지토리입니다.<br>
 
-API 가이드 작성부터 구현까지의 과정을 기록한 레포지토리입니다.
+👉 [SW 활용 현황 API 가이드 바로가기](https://sw-usage-api.gitbook.io/sw-usage-api-docs-docs/)
 
 <br>
 
