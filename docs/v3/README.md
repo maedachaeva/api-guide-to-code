@@ -91,3 +91,8 @@ WHERE ri.request_code = 'L'
 GROUP BY d.dept_code, d.dept_name, DATE_FORMAT(ri.create_date, '%Y-%m')
 ORDER BY d.dept_code, yearMonth;
 ```
+
+---
+
+### ERD
+<img width="1384" height="562" alt="SW_Diagram" src="https://github.com/user-attachments/assets/ea71ec3e-20be-497c-ba53-a473fc369bc7" />
