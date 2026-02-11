@@ -1,4 +1,4 @@
-package com.demo.statistics.global.common.response;
+package com.demo.statistics.global.error;
 
 import lombok.Getter;
 
