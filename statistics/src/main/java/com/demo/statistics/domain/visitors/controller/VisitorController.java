@@ -2,6 +2,7 @@ package com.demo.statistics.domain.visitors.controller;
 
 import com.demo.statistics.domain.visitors.dto.VisitorStat;
 import com.demo.statistics.domain.visitors.service.VisitorService;
+import com.demo.statistics.global.common.response.SuccessResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,17 +17,17 @@ public class VisitorController {
 
     // MAU
     @GetMapping("/api/v1/visitors/monthly")
-    public List<VisitorStat> getMonthlyVisitors(
+    public SuccessResponse<List<VisitorStat>> getMonthlyVisitors(
             @RequestParam String fromMonth,
             @RequestParam String toMonth) {
-        return visitorService.getMonthlyVisitors(fromMonth, toMonth);
+        return new SuccessResponse<>(visitorService.getMonthlyVisitors(fromMonth, toMonth));
     }
 
     // DAU
     @GetMapping("/api/v1/visitors/daily")
-    public List<VisitorStat> getDailyVisitors(
+    public SuccessResponse<List<VisitorStat>> getDailyVisitors(
             @RequestParam String fromDate,
             @RequestParam String toDate) {
-        return visitorService.getDailyVisitors(fromDate, toDate);
+        return new SuccessResponse<>(visitorService.getDailyVisitors(fromDate, toDate));
     }
 }
