@@ -1,12 +1,12 @@
 package com.demo.statistics.global.error;
 
-import lombok.Getter;
+public record ErrorResponse(ErrorDetail error) {
 
-@Getter
-public class ErrorResponse {
-    private final ErrorDetail error;
-
-    public ErrorResponse(String code, String message) {
-        this.error = new ErrorDetail(code, message);
+    public static ErrorResponse of(ErrorCode errorCode) {
+        return new ErrorResponse(
+                new ErrorDetail(errorCode.name(), errorCode.getMessage())
+        );
     }
+
+    public record ErrorDetail(String code, String message) {}
 }
