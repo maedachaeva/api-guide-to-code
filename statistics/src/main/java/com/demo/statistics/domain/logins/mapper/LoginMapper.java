@@ -19,6 +19,11 @@ public interface LoginMapper {
             @Param("toMonth") String toMonth
     );
 
+    Integer selectTotalLoginsExcludingHolidays(
+            @Param("fromDate") String fromDate,
+            @Param("toDate") String toDate
+    );
+
     /*YearLoginCount selectYearLogin(@Param("year") String year);
     YearMonthLoginCount selectYearMonthLogin(@Param("yearMonth") String yearMonth);*/
 }
