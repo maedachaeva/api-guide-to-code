@@ -1,7 +1,7 @@
 package com.demo.statistics.domain.logins.controller;
 
-import com.demo.statistics.domain.logins.dto.res.YearLoginCount;
-import com.demo.statistics.domain.logins.dto.res.YearMonthLoginCount;
+import com.demo.statistics.domain.logins.dto.YearLoginCount;
+import com.demo.statistics.domain.logins.dto.YearMonthLoginCount;
 import com.demo.statistics.domain.logins.service.LoginsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

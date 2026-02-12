@@ -1,7 +1,7 @@
 package com.demo.statistics.domain.logins.mapper;
 
-import com.demo.statistics.domain.logins.dto.res.YearLoginCount;
-import com.demo.statistics.domain.logins.dto.res.YearMonthLoginCount;
+import com.demo.statistics.domain.logins.dto.YearLoginCount;
+import com.demo.statistics.domain.logins.dto.YearMonthLoginCount;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

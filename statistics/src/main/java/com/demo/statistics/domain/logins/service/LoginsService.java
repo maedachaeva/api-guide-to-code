@@ -1,7 +1,7 @@
 package com.demo.statistics.domain.logins.service;
 
-import com.demo.statistics.domain.logins.dto.res.YearLoginCount;
-import com.demo.statistics.domain.logins.dto.res.YearMonthLoginCount;
+import com.demo.statistics.domain.logins.dto.YearLoginCount;
+import com.demo.statistics.domain.logins.dto.YearMonthLoginCount;
 import com.demo.statistics.domain.logins.mapper.LoginMapper;
 import org.springframework.stereotype.Service;
 
