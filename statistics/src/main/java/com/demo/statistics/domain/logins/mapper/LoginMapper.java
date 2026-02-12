@@ -19,7 +19,7 @@ public interface LoginMapper {
             @Param("toMonth") String toMonth
     );
 
-    Integer selectTotalLoginsExcludingHolidays(
+    Integer selectLoginCountByDateRange(
             @Param("fromDate") String fromDate,
             @Param("toDate") String toDate
     );

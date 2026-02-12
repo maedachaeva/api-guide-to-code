@@ -37,6 +37,15 @@
         ORDER BY d.dept_code, yearMonth
     </select>
 
+    <select id="selectLoginCountByDateRange" resultType="Integer">
+        SELECT
+            COUNT(*) AS loginCount
+        FROM statistic.request_info
+        WHERE request_code = 'L'
+            AND create_date <![CDATA[>=]]> #{fromDate}
+            AND create_date <![CDATA[<]]> DATE_ADD(#{toDate}, INTERVAL 1 DAY)
+    </select>
+
     <!--<select id="selectYearLogin" resultType="com.demo.statistics.domain.logins.dto.YearLoginCount">
         SELECT #{year} AS year, COUNT(*) AS totCnt
         FROM statistic.request_info
