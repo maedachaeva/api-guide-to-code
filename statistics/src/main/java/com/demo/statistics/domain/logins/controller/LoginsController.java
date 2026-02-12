@@ -1,25 +1,25 @@
-package com.demo.statistics.controller;
+package com.demo.statistics.domain.logins.controller;
 
-import com.demo.statistics.dto.res.YearLoginCount;
-import com.demo.statistics.dto.res.YearMonthLoginCount;
-import com.demo.statistics.service.StatisticService;
+import com.demo.statistics.domain.logins.dto.res.YearLoginCount;
+import com.demo.statistics.domain.logins.dto.res.YearMonthLoginCount;
+import com.demo.statistics.domain.logins.service.LoginsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class StatisticController {
+public class LoginsController {
 
-    private final StatisticService statisticService;
+    private final LoginsService loginsService;
 
-    public StatisticController(StatisticService statisticService) {
-        this.statisticService = statisticService;
+    public LoginsController(LoginsService loginsService) {
+        this.loginsService = loginsService;
     }
 
     @GetMapping(value = "/api/v1/logins/{year}", produces = "application/json")
     public ResponseEntity<YearLoginCount> getYearLoginCount(@PathVariable String year) {
-        return ResponseEntity.ok(statisticService.getYearLogins(year));
+        return ResponseEntity.ok(loginsService.getYearLogins(year));
     }
 
     @GetMapping(value = "/api/v1/logins/{year}/{month}", produces = "application/json")
@@ -27,6 +27,6 @@ public class StatisticController {
             @PathVariable String year,
             @PathVariable String month
     ) {
-        return ResponseEntity.ok(statisticService.getYearMonthLogins(year, month));
+        return ResponseEntity.ok(loginsService.getYearMonthLogins(year, month));
     }
 }

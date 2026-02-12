@@ -3,15 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.demo.statistics.mapper.StatisticMapper">
-    <select id="selectYearLogin" resultType="com.demo.statistics.dto.res.YearLoginCount">
+<mapper namespace="com.demo.statistics.domain.logins.mapper.LoginsMapper">
+    <select id="selectYearLogin" resultType="com.demo.statistics.domain.logins.dto.res.YearLoginCount">
         SELECT #{year} AS year, COUNT(*) AS totCnt
         FROM statistic.request_info
         WHERE YEAR(create_date) = #{year}
         AND request_code = 'L'
     </select>
 
-    <select id="selectYearMonthLogin" resultType="com.demo.statistics.dto.res.YearMonthLoginCount">
+    <select id="selectYearMonthLogin" resultType="com.demo.statistics.domain.logins.dto.res.YearMonthLoginCount">
         SELECT #{yearMonth} AS yearMonth, COUNT(*) AS totCnt
         FROM statistic.request_info
         WHERE DATE_FORMAT(create_date, '%Y%m') = #{yearMonth}

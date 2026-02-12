@@ -1,4 +1,4 @@
-package com.demo.statistics.dto.res;
+package com.demo.statistics.domain.logins.dto.res;
 
 public class YearMonthLoginCount {
     private String yearMonth;
