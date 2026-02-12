@@ -1,5 +1,6 @@
 package com.demo.statistics.domain.login.controller;
 
+import com.demo.statistics.domain.logins.dto.DepartmentMonthlyLoginStat;
 import com.demo.statistics.domain.logins.dto.LoginAvgStat;
 import com.demo.statistics.domain.logins.dto.YearLoginCount;
 import com.demo.statistics.domain.logins.dto.YearMonthLoginCount;
@@ -7,6 +8,8 @@ import com.demo.statistics.domain.logins.service.LoginService;
 import com.demo.statistics.global.common.response.SuccessResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,6 +22,13 @@ public class LoginController {
             @RequestParam String fromDate,
             @RequestParam String toDate) {
         return new SuccessResponse<>(loginService.getAverageDailyLogins(fromDate, toDate));
+    }
+
+    @GetMapping("/monthly/by-department")
+    public SuccessResponse<List<DepartmentMonthlyLoginStat>> getMonthlyLoginsByDepartment(
+            @RequestParam String fromMonth,
+            @RequestParam String toMonth) {
+        return new SuccessResponse<>(loginService.getMonthlyLoginsByDepartment(fromMonth, toMonth));
     }
 
     /*@GetMapping("/{year}")
