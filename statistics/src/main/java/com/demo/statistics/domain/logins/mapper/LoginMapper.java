@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public interface LoginsMapper {
+public interface LoginMapper {
     YearLoginCount selectYearLogin(@Param("year") String year);
     YearMonthLoginCount selectYearMonthLogin(@Param("yearMonth") String yearMonth);
 }

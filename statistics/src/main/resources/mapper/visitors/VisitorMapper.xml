@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.statistics.domain.visitors.mapper.VisitorMapper">
+    <select id="selectMonthlyVisitors" resultType="com.demo.statistics.domain.visitors.dto.VisitorStat">
+        SELECT
+            DATE_FORMAT(create_date, '%Y-%m') AS period,
+            COUNT(DISTINCT user_id) AS uniqueUserCount
+        FROM request_info
+        WHERE request_code = 'L'
+            AND create_date <![CDATA[>=]]> CONCAT(#{fromMonth}, '-01')
+            AND create_date <![CDATA[<]]>  DATE_ADD(CONCAT(#{toMonth}, '-01'), INTERVAL 1 MONTH)
+        GROUP BY DATE_FORMAT(create_date, '%Y-%m')
+        ORDER BY period
+    </select>
+
+    <select id="selectDailyVisitors" resultType="com.demo.statistics.domain.visitors.dto.VisitorStat">
+        SELECT
+            DATE(create_date) AS period,
+            COUNT(DISTINCT user_id) AS uniqueUserCount
+        FROM request_info
+        WHERE request_code = 'L'
+            AND create_date <![CDATA[>=]]> #{fromDate}
+            AND create_date <![CDATA[<]]> DATE_ADD(#{toDate}, INTERVAL 1 DAY)
+        GROUP BY DATE(create_date)
+        ORDER BY period
+    </select>
+</mapper>
