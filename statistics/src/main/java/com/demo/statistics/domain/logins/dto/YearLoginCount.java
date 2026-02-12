@@ -1,3 +1,4 @@
+/*
 package com.demo.statistics.domain.logins.dto;
 
 public class YearLoginCount {
@@ -22,3 +23,4 @@ public class YearLoginCount {
         this.totCnt = totCnt;
     }
 }
+*/
