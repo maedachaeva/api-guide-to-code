@@ -1,12 +1,13 @@
 package com.demo.statistics.domain.logins.service;
 
 
+import com.demo.statistics.domain.logins.dto.DepartmentMonthlyLoginStat;
 import com.demo.statistics.domain.logins.dto.LoginAvgStat;
-import com.demo.statistics.domain.logins.dto.YearLoginCount;
-import com.demo.statistics.domain.logins.dto.YearMonthLoginCount;
 import com.demo.statistics.domain.logins.mapper.LoginMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -16,6 +17,11 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public LoginAvgStat getAverageDailyLogins(String fromDate, String toDate) {
         return loginMapper.selectAverageDailyLogins(fromDate, toDate);
+    }
+
+    @Override
+    public List<DepartmentMonthlyLoginStat> getMonthlyLoginsByDepartment(String fromMonth, String toMonth) {
+        return loginMapper.selectMonthlyLoginsByDepartment(fromMonth, toMonth);
     }
 
     /*@Override
