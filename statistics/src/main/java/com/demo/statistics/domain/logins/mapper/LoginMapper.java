@@ -1,16 +1,22 @@
 package com.demo.statistics.domain.logins.mapper;
 
+import com.demo.statistics.domain.logins.dto.DepartmentMonthlyLoginStat;
 import com.demo.statistics.domain.logins.dto.LoginAvgStat;
-import com.demo.statistics.domain.logins.dto.YearLoginCount;
-import com.demo.statistics.domain.logins.dto.YearMonthLoginCount;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface LoginMapper {
     LoginAvgStat selectAverageDailyLogins(
             @Param("fromDate") String fromDate,
             @Param("toDate") String toDate
+    );
+
+    List<DepartmentMonthlyLoginStat> selectMonthlyLoginsByDepartment(
+            @Param("fromMonth") String fromMonth,
+            @Param("toMonth") String toMonth
     );
 
     /*YearLoginCount selectYearLogin(@Param("year") String year);
