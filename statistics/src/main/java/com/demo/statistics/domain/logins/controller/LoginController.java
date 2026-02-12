@@ -1,9 +1,7 @@
-package com.demo.statistics.domain.login.controller;
+package com.demo.statistics.domain.logins.controller;
 
 import com.demo.statistics.domain.logins.dto.DepartmentMonthlyLoginStat;
 import com.demo.statistics.domain.logins.dto.LoginAvgStat;
-import com.demo.statistics.domain.logins.dto.YearLoginCount;
-import com.demo.statistics.domain.logins.dto.YearMonthLoginCount;
 import com.demo.statistics.domain.logins.service.LoginService;
 import com.demo.statistics.global.common.response.SuccessResponse;
 import lombok.RequiredArgsConstructor;
